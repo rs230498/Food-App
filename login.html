@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #sin{
+            width: 25%;background-color: gray;margin: auto;text-align: center;padding-top: 10px;padding-bottom: 10px;
+        }
+        input{
+            width: 90%;height: 4vh;margin-top: 15px;
+        }
+        button{
+            border: none;padding: 8px;background-color: teal;border-radius: 5px;margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="sin">
+        <h2>Login</h2>
+        <input type="text" name="" id="email" placeholder="Email">
+        <input type="text" name="" id="pass" placeholder="Password"><br>
+        <button onclick="sig()">Login</button>
+    </div>
+</body>
+</html>
+
+<script>
+    var a = JSON.parse(localStorage.getItem("user"))
+
+    var b = document.querySelector("#email")
+    var c = document.querySelector("#pass")
+
+    function sig()
+    {
+        if(a.value=="" || b.value=="" || c.value=="")
+        {
+            alert("Fill all the input boxes")
+        }
+        else
+        {
+            if(b.value==a.email && c.value==a.pass)
+            {
+                alert("Login Sucessful !!")
+                window.open("index.html","_self")
+            }
+            else
+            {
+                alert("Wrong Credentials")
+                window.location.reload()
+            }
+        }
+    }
+</script>
